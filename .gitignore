@@ -3,6 +3,7 @@ Builds/
 Temp/
 Library/
 obj/
+Logs/
 
 # Visual Studio / MonoDevelop generated
 *.csproj
@@ -10,6 +11,7 @@ obj/
 *.sln
 *.suo
 *.userprefs
+.vsconfig
 
 # OS generated
 .DS_Store
