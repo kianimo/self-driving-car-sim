@@ -1,6 +1,6 @@
 # Deprecated Repository
 This code in the master branch of the original repository is deprecated. Currently enrolled learners, if any, can: 
-- Use the upgraded code [Unity_2020_3_SocketIO_v5](https://github.fh-zwickau.de/chf17i7z/self-driving-car-sim/tree/Unity_2020_3_SocketIO_v5) or (compatible with SocketIO v4) [Unity_2020_3](https://github.com/udacity/self-driving-car-sim/tree/Unity_2020_3) or [Unity_2019_4](https://github.com/udacity/self-driving-car-sim/tree/Unity_2019_4) as suiitable per your local Unity version compatibility. Credits: [PR#134](https://github.com/udacity/self-driving-car-sim/pull/134) and  [PR#133](https://github.com/udacity/self-driving-car-sim/pull/133) respectively. 
+- Use the upgraded code [Unity_2020_3_SocketIO_v5](https://github.com/kianimo/self-driving-car-sim/tree/Unity_2020_3_SocketIO_v5) or (compatible with SocketIO v4) [Unity_2020_3](https://github.com/udacity/self-driving-car-sim/tree/Unity_2020_3) or [Unity_2019_4](https://github.com/udacity/self-driving-car-sim/tree/Unity_2019_4) as suiitable per your local Unity version compatibility. Credits: [PR#134](https://github.com/udacity/self-driving-car-sim/pull/134) and  [PR#133](https://github.com/udacity/self-driving-car-sim/pull/133) respectively. 
 - Utilize the https://knowledge.udacity.com/ forum to seek help *only* on content-specific issues.
 - [Submit a support ticket](https://udacity.zendesk.com/hc/en-us/requests/new) if (learners are) blocked due to other (non-content) reasons.
 
