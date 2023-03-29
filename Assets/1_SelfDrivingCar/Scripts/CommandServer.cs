@@ -5,6 +5,7 @@ using SocketIO;
 using UnityStandardAssets.Vehicles.Car;
 using System;
 using System.Security.AccessControl;
+using System.Globalization;
 
 public class CommandServer : MonoBehaviour
 {
@@ -44,8 +45,8 @@ public class CommandServer : MonoBehaviour
 	{
 		JSONObject jsonObject = obj.data;
 		//    print(float.Parse(jsonObject.GetField("steering_angle").str));
-		CarRemoteControl.SteeringAngle = float.Parse(jsonObject.GetField("steering_angle").str);
-		CarRemoteControl.Acceleration = float.Parse(jsonObject.GetField("throttle").str);
+		CarRemoteControl.SteeringAngle = float.Parse(jsonObject.GetField("steering_angle").str, CultureInfo.InvariantCulture);
+		CarRemoteControl.Acceleration = float.Parse(jsonObject.GetField("throttle").str, CultureInfo.InvariantCulture);
 		EmitTelemetry(obj);
 	}
 
@@ -61,9 +62,9 @@ public class CommandServer : MonoBehaviour
 			else {
 				// Collect Data from the Car
 				Dictionary<string, string> data = new Dictionary<string, string>();
-				data["steering_angle"] = _carController.CurrentSteerAngle.ToString("N4");
-				data["throttle"] = _carController.AccelInput.ToString("N4");
-				data["speed"] = _carController.CurrentSpeed.ToString("N4");
+				data["steering_angle"] = _carController.CurrentSteerAngle.ToString("N4", CultureInfo.InvariantCulture);
+				data["throttle"] = _carController.AccelInput.ToString("N4", CultureInfo.InvariantCulture);
+				data["speed"] = _carController.CurrentSpeed.ToString("N4", CultureInfo.InvariantCulture);
 				data["image"] = Convert.ToBase64String(CameraHelper.CaptureFrame(FrontFacingCamera));
 				_socket.Emit("telemetry", new JSONObject(data));
 			}
