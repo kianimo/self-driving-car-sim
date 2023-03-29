@@ -293,6 +293,12 @@ namespace SocketIO
 			EmitPacket(new Packet(EnginePacketType.MESSAGE, SocketPacketType.EVENT, 0, "/", id, new JSONObject(raw)));
 		}
 
+
+		private void EmitConnect()
+		{
+			EmitPacket(new Packet(EnginePacketType.MESSAGE, SocketPacketType.CONNECT, 0, "/", -1, new JSONObject("")));
+		}
+
 		private void EmitClose()
 		{
 			EmitPacket(new Packet(EnginePacketType.MESSAGE, SocketPacketType.DISCONNECT, 0, "/", -1, new JSONObject("")));
@@ -316,6 +322,12 @@ namespace SocketIO
 
 		private void OnOpen(object sender, EventArgs e)
 		{
+			// compatibility change for V4 to V5
+			// "In previous versions, a client was always connected to the default namespace, even if it requested access to another namespace.
+			// This is not the case anymore, the client must send a CONNECT packet in any case."
+			// https://socket.io/docs/v4/socket-io-protocol/#difference-between-v5-and-v4
+			EmitConnect();
+
 			EmitEvent("open");
 		}
 
